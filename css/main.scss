@@ -13,14 +13,14 @@ html, body {
     height: 100%; 
     margin: 0px; 
     padding: 0px;
-    font-size:12px;
+    font-size:14px;
     
     @include media($medium-screen) {
-        font-size: 14px;
+        font-size: 16px;
     }
     
     @include media($large-screen) {
-        font-size: 16px;
+        font-size: 18px;
     }
 
 }
