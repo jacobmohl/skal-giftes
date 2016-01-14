@@ -18,15 +18,15 @@ h6 {
 }
 
 h1 {
-    font-size:2em;
+    font-size:modular-scale(3);
 }
 
 h2 {
-    font-size:1.8em;
+    font-size:modular-scale(2);
 }
 
 h3 {
-    font-size:1.2em;
+    font-size:modular-scale(1);
 }
 
 h4 {
@@ -34,11 +34,11 @@ h4 {
 }
 
 h5 {
-    font-size:0.8em;
+    font-size:modular-scale(-1);
 }
 
 h6 {
-    font-size:0.6em;
+    font-size:modular-scale(-2);
 }
 
 p {
