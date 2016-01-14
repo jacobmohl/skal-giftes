@@ -13,14 +13,14 @@ html, body {
     height: 100%; 
     margin: 0px; 
     padding: 0px;
-    font-size:14px;
+    font-size:12px;
     
     @include media($medium-screen) {
-        font-size: 16px;
+        font-size: 14px;
     }
     
     @include media($large-screen) {
-        font-size: 18px;
+        font-size: 16px;
     }
 
 }
@@ -42,4 +42,45 @@ header {
     @include media($large-screen) {
         background-size: 50%;
     }    
+}
+
+
+section {
+    
+    padding:5em 0;
+}
+.row { @include row(); }
+.container { @include outer-container(); }
+.span8of12 { 
+    @include span-columns(8);
+    @include shift(2);    
+}
+
+.span10of12 { 
+    @include span-columns(10);
+    @include shift(1);    
+}
+
+.span6of12 { 
+    @include span-columns(6);
+    @include shift(3);    
+}
+
+.button {
+    @include transition(all $base-duration $base-timing);
+    
+    border: 2px $dark-brown solid;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: $dark-brown;
+    border-radius: 1.2em * 5;
+    line-height: 1;
+    padding: 0.5em 3em;
+    height:1.2em;
+    
+    &:hover {
+        background-color: $dark-brown;
+        color: #fff;
+    }
 }

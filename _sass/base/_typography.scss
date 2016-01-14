@@ -3,6 +3,7 @@ body {
   font-family: $base-font-family;
   font-size: $base-font-size;
   line-height: $base-line-height;
+  text-align: center;
 }
 
 h1,
@@ -15,6 +16,8 @@ h6 {
   font-size: $base-font-size;
   line-height: $heading-line-height;
   margin: 0 0 $small-spacing;
+  text-transform: uppercase;
+  font-weight: 600;
 }
 
 h1 {
