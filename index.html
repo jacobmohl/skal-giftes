@@ -13,11 +13,38 @@
 
     <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <script src="//code.jquery.com/jquery-2.2.0.min.js"></script>
+    <script src="js/script.js"></script>
 </head>
 
 <body>
+    <nav>
+        <ul>
+            <li>
+                <a href="#accommodation" data-number="1">
+                    <span class="nav-dot"></span>
+                    <span class="nav-label">Overnatning</span>
+                </a>
+            </li>
+            <li>
+                <a href="#transport" data-number="2">
+                    <span class="nav-dot"></span>
+                    <span class="nav-label">Kørsel</span>
+                </a>
+            </li>            
+            <li>
+                <a href="#toastmaster" data-number="3">
+                    <span class="nav-dot"></span>
+                    <span class="nav-label">Toastmaster</span>
+                </a>
+            </li>            
+        </ul>
+    </nav>
+    <a class="nav-trigger">Åben navigation<span></span></a>
+    
     <header></header>
-    <section class="accommodation">
+    
+    <section id="accommodation" class="nav-section accommodation">
         <div class="container">
             <div class="row">
                 <div class="span6of12"><img src="images/hindsgavl.png"/></div>

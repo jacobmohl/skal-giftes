@@ -13,6 +13,7 @@ html, body {
     height: 100%; 
     margin: 0px; 
     padding: 0px;
+    
     font-size:14px;
     
     @include media($medium-screen) {
@@ -21,10 +22,8 @@ html, body {
     
     @include media($large-screen) {
         font-size: 18px;
-    }
-
+    }    
 }
-
 
 header {
     background-color: $dark-brown;
@@ -84,3 +83,5 @@ section {
         color: #fff;
     }
 }
+
+@import "nav";

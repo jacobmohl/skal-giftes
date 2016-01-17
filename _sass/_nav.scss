@@ -1,0 +1,202 @@
+/* Normal screen */
+@include media($large-screen) {
+    
+    .nav-trigger {
+        display:none;    
+    }
+        
+    nav {
+        /*fix the navigation*/
+        position: fixed;
+        right: 40px;
+        top: 50%;
+        bottom: auto;
+        transform: translateY(-50%);          
+    }
+
+    
+    li {
+        text-align: right;
+    }
+      
+    
+      
+    a {
+        display: inline-block;
+		@include clearfix;
+        
+        span {
+			float: right;
+			display: inline-block;
+			@include transform(scale(.6));
+        }         
+        &:hover {
+            span {
+                /*scale up navigation dots and labels*/
+                @include transform(scale(1)); 
+            }
+        
+            .nav-label {
+                /*show labels*/
+                opacity: 1;
+            }          
+        } 
+        
+        &.active .nav-dot {
+            background-color: $light-red;
+        }      
+    } 
+    
+     
+    .nav-dot {
+		position: relative;
+		/* we set a top value in order to align the dot with the label. If you change label's font, you may need to change this top value*/
+		top: 8px;
+		height: 12px;
+		width: 12px;
+		border-radius: 50%;
+		background-color: $action-color;
+		transition: transform 0.2s, background-color 0.5s;
+		@include transform-origin(50% 50%);
+    }
+    
+    .nav-label {
+		position: relative;
+		margin-right: 10px;
+		padding: .4em .5em;
+		color: $action-color;
+
+		-webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+		-moz-transition: -moz-transform 0.2s, opacity 0.2s;
+		transition: transform 0.2s, opacity 0.2s;
+		opacity: 0;
+		@include transform-origin(100% 50%);
+    }  
+    
+    
+}
+
+
+
+
+@include media(min-width 0px max-width $large-screen) {
+
+
+
+.nav-trigger {
+	display: block;
+	z-index: 2;
+	position: fixed;
+	bottom: 30px;
+	right: 5%;
+	height: 44px;
+	width: 44px;
+	background: $light-green;
+    border-radius: 0.25em;
+
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+
+	span {
+		position: absolute;
+		height: 4px;
+		width: 4px;
+		background-color: $dark-brown;
+		border-radius: 50%;
+        left: 50%;
+        top: 50%;
+        bottom: auto;
+        right: auto;        
+
+		&::before, &::after {
+			content: '';
+			height: 100%;
+			width: 100%;
+			position: absolute;
+			left: 0;
+			background-color: inherit;
+			border-radius: inherit;
+		}
+
+		&::before {
+			top: -9px;
+		}
+
+		&::after {
+			bottom: -9px;
+		}
+	}
+}
+
+nav {
+	position: fixed;
+	z-index: 1;
+	right: 5%;
+	bottom: 30px;
+	width: 90%;
+	max-width: 400px;
+	max-height: 90%;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+	@include transform-origin(right bottom);
+	@include transform(scale(0));
+	@include transition-property(transform);
+	@include transition-duration(.2s);
+	background: $light-green;
+    text-align: left;
+    border-radius: 0.25em;
+
+	a {
+		display: block;
+		padding: 1em;
+		border-bottom: 1px solid $dark-brown;
+        color: rgba($dark-brown, 0.6);
+
+		span:first-child {
+			display: none;
+		}
+
+		&.active span:last-child, &:hover {
+			color: $dark-brown;
+		}
+	}
+	
+	&.open {
+		@include transform(scale(1));
+	}
+
+	&.open + .nav-trigger {
+		background-color: transparent;
+		
+		span {
+			background-color: rgba(#fff, 0);	
+		}
+
+		span::before, span::after {
+			background-color: $dark-brown;
+			height: 3px;
+			width: 20px;
+			border-radius: 0;
+			left: -8px;
+		}
+
+		span::before {
+			@include transform(rotate(45deg));
+			top: 1px;
+		}
+
+		span::after {
+			@include transform(rotate(135deg));
+			bottom: 0;
+		}
+	}
+
+	li:last-child a {
+		border-bottom: none;
+	}
+}
+
+
+
+}
