@@ -72,8 +72,14 @@
         </div>
     </section>
     <section id="heart"></section>
+    
     <section id="transport" class="nav-section">
         <h1>Kørselsvejledning</h1>
+        <a id="btn_map_church" class="button button_small" href="#">Thomas Kingos Kirke</a>
+        <a id="btn_map_castle" class="button button_small" href="#">Hindsgavl Slot</a>
+        <br>
+        <br>
+        <div id="map"></div>
         <br><br><br>
     </section>
     <section id="splitter1"></section> 
@@ -101,5 +107,6 @@
       -->
       
       <footer></footer>
+      <script async defer src="//maps.googleapis.com/maps/api/js?key={{ site.mapsApiKey }}&callback=initMap"></script>
 </body>
 </html>

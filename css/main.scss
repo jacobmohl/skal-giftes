@@ -57,7 +57,6 @@ footer {
 
 
 section {
-    
     padding:5em 0;
 }
 
@@ -81,6 +80,11 @@ section#splitter1 {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
+}
+
+#map {
+    height:70vh;
+    width:100%;
 }
 .row { @include row(); }
 .container { @include outer-container(); }
@@ -115,6 +119,9 @@ section#splitter1 {
         background-color: $dark-brown;
         color: #fff;
     }
+}
+.button.button_small {
+    font-size:0.8em;
 }
 
 @import "nav";

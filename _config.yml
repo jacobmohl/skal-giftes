@@ -8,6 +8,6 @@
 # Site settings
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://www.jacobmogline.dk" # the base hostname & protocol for your site
-
+mapsApiKey: "AIzaSyDmz_QxarquPBZ5r7KBjwV7E10uUBCckh4"
 # Build settings
 markdown: kramdown
