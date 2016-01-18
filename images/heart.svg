@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="19px" height="14px" viewBox="0 0 19 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.4 (17249) - http://www.bohemiancoding.com/sketch -->
+    <title>Hjerte</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Website" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Mobile-Portrait" sketch:type="MSArtboardGroup" transform="translate(-150.000000, -2002.000000)" fill="#FFFFFF">
+            <g id="Hjerte" sketch:type="MSLayerGroup" transform="translate(150.000000, 2002.000000)">
+                <path d="M16.951,8.6893 C16.951,8.6893 16.642,8.9863 16.491,9.1383 C15.809,9.8253 15.122,10.5063 14.448,11.2013 C14.015,11.6483 13.537,12.0363 13.012,12.3663 C12.398,12.7533 11.781,13.1333 11.161,13.5083 C10.954,13.6333 10.744,13.7603 10.52,13.8453 C10.118,13.9953 9.734,14.0893 9.287,13.8723 C8.835,13.6523 8.323,13.5433 7.827,13.4303 C7.234,13.2953 6.725,13.0233 6.258,12.6443 C5.737,12.2213 5.205,11.8113 4.677,11.3963 C4.232,11.0453 3.821,10.6613 3.499,10.1883 C3.393,10.0333 3.269,9.8903 3.16,9.7373 C0.663,6.8933 0.1,4.6513 1.161,1.9853 C1.264,1.8273 1.35,1.6593 1.454,1.5023 C1.915,0.8053 2.575,0.4383 3.399,0.3673 C5.168,0.2153 6.806,0.6463 8.338,1.5133 C8.811,1.7803 9.199,2.1503 9.513,2.5993 C9.656,2.8023 9.763,2.8163 9.895,2.6503 C10.381,2.0363 11.04,1.6843 11.746,1.4053 C12.798,0.9893 13.879,0.6783 15.006,0.5543 C15.246,0.5283 15.49,0.5153 15.731,0.5233 C16.89,0.5613 18.073,1.2513 18.556,1.9423 C20.216,4.1593 16.951,8.6893 16.951,8.6893" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -35,7 +35,11 @@ jQuery(document).ready(function($){
 
 	function updateNavigation() {
 		contentSections.each(function(){
+            
 			$this = $(this);
+            
+            console.log($this);
+            
 			var activeSection = $('nav a[href="#'+$this.attr('id')+'"]').data('number') - 1;
 			if ( ( $this.offset().top - $(window).height()/2 < $(window).scrollTop() ) && ( $this.offset().top + $this.height() - $(window).height()/2 > $(window).scrollTop() ) ) {
 				navigationItems.eq(activeSection).addClass('active');

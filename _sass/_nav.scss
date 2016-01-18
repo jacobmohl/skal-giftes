@@ -1,5 +1,5 @@
 /* Normal screen */
-@include media($large-screen) {
+@include media($medium-screen) {
     
     .nav-trigger {
         display:none;    
@@ -26,8 +26,8 @@
 		@include clearfix;
         
         span {
+            display: inline-block;
 			float: right;
-			display: inline-block;
 			@include transform(scale(.6));
         }         
         &:hover {
@@ -51,7 +51,7 @@
     .nav-dot {
 		position: relative;
 		/* we set a top value in order to align the dot with the label. If you change label's font, you may need to change this top value*/
-		top: 8px;
+		top: 0.8em;//8px;
 		height: 12px;
 		width: 12px;
 		border-radius: 50%;
@@ -79,7 +79,7 @@
 
 
 
-@include media(min-width 0px max-width $large-screen) {
+@include media(min-width 0px max-width $medium-screen) {
 
 
 
