@@ -36,11 +36,9 @@ jQuery(document).ready(function($){
 	function updateNavigation() {
 		contentSections.each(function(){
             
-			$this = $(this);
-            
-            console.log($this);
-            
+			var $this = $(this);            
 			var activeSection = $('nav a[href="#'+$this.attr('id')+'"]').data('number') - 1;
+            
 			if ( ( $this.offset().top - $(window).height()/2 < $(window).scrollTop() ) && ( $this.offset().top + $this.height() - $(window).height()/2 > $(window).scrollTop() ) ) {
 				navigationItems.eq(activeSection).addClass('active');
 			}else {
@@ -67,8 +65,7 @@ jQuery(document).ready(function($){
  * 
  ****************************/
  
- 
-function createMaker(map, bounds, position) {
+function makeMaker(map, bounds, position) {
     // Create a marker and set its position.
     var marker = new google.maps.Marker({
         map: map,
@@ -81,43 +78,36 @@ function createMaker(map, bounds, position) {
 }
 
 var map;
-var myLatLng = [{lat: 55.385389, lng: 10.387459}, {lat: 55.504980, lng: 9.689340}];
 var markers = [];
-  
+
   
 function initMap() {
+    var myLatLng = [new google.maps.LatLng(55.385389, 10.387459), new google.maps.LatLng(55.504980, 9.689340)];
+    var bounds = new google.maps.LatLngBounds();
+    
+    var options = {
+        center: myLatLng[0],
+        scrollwheel: false,
+        draggable: false, 
+        disableDoubleClickZoom: false,
+        zoom: 11,
+        zoomControl: true,
+        mapTypeControl: false,
+        scaleControl: false,
+        streetViewControl: false,
+        rotateControl: false
+    };
+    
+    // Create a map object and specify the DOM element for display.
+    map = new google.maps.Map(document.getElementById('map'), options);
+    
+    markers.push(makeMaker(map, bounds, myLatLng[0]));
+    markers.push(makeMaker(map, bounds, myLatLng[1]));
+    
+    map.fitBounds(bounds);
+  
+};
 
-  var bounds = new google.maps.LatLngBounds();
-  
-  // Create a map object and specify the DOM element for display.
-  map = new google.maps.Map(document.getElementById('map'), {
-    center: myLatLng[0],
-    scrollwheel: false,
-    draggable: false, 
-    zoomControl: false, 
-    disableDoubleClickZoom: false,
-    zoom: 11,
-    zoomControl: true,
-    mapTypeControl: false,
-    scaleControl: false,
-    streetViewControl: false,
-    rotateControl: false
-  });
-  
-  markers.push(createMaker(map, bounds, myLatLng[0]));
-  markers.push(createMaker(map, bounds, myLatLng[1]));
-  
-  map.fitBounds(bounds);
-
-  /*
-  // Create a marker and set its position.
-  var marker = new google.maps.Marker({
-    map: map,
-    position: myLatLng[0],
-    title: 'Hello World!'
-  });
-  */
-}
 jQuery(document).ready(function($){
     $("#btn_map_church").click(function(event){
        map.setCenter(markers[0].getPosition());
