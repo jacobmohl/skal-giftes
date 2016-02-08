@@ -75,9 +75,22 @@
     
     <section id="transport" class="nav-section">
         <h1>Kørselsvejledning</h1>
-        <a id="btn_map_church" class="button button_small" href="#">Thomas Kingos Kirke</a>
-        <a id="btn_map_castle" class="button button_small" href="#">Hindsgavl Slot</a>
-        <br>
+
+        <div class="container">
+            <div class="row">
+                <div class="address">
+                    <p>HINDSGAVL SLOT <br/>Hindsgavl Allé 7 <br/>5500 Middelfart<br/><a href="#">Se kørselsvejledning</a></p>
+                </div>
+                <div class="address">
+                    <p>THOMAS KINGOS KIRKE<br/>Bülowsvej 9-11<br/>5230 Odense M<br/><a href="#">Se kørselsvejledning</a></p>
+                </div>
+            </div> 
+            <br>
+            <h5>SE PÅ KORT</h5>
+            <a id="btn_map_church" class="button button_small" href="#">Thomas Kingos Kirke</a>
+            <a id="btn_map_castle" class="button button_small" href="#">Hindsgavl Slot</a>            
+            <a id="btn_map_all" class="button button_small" href="#">Se alt</a>  
+        </div>
         <br>
         <div id="map"></div>
     </section>
@@ -91,24 +104,17 @@
         </div>
     </section>   
     
+    <!--
     <section id="toastmaster" class="nav-section">
         <h1>Toastmaster</h1>
         <br><br><br>
     </section>
+    
     <section id="wishlist" class="nav-section">
         <h1>Ønskeliste</h1>
         <br><br><br>
     </section>
-      <!--
-      <h1>Jacob og Line Skal giftes</h1>
-      <h2>Jacob og Line Skal giftes</h2>
-      <h3>Jacob og Line Skal giftes</h3>
-      <h4>Jacob og Line Skal giftes</h4>
-      <h5>Jacob og Line Skal giftes</h5>
-      <h6>Jacob og Line Skal giftes</h6>
-      
-      -->
-      
+    -->
       <footer></footer>
       <script async defer src="//maps.googleapis.com/maps/api/js?key={{ site.mapsApiKey }}&callback=initMap"></script>
 </body>

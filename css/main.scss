@@ -70,6 +70,29 @@ section#heart {
     background-size: 6em; 
 }
 
+section#transport {
+    padding-bottom: 0;
+    
+    #map {
+        height:80vh;
+        width:100%;
+    } 
+    
+    .address {
+        
+        
+    @include media($medium-screen) {
+        @include span-columns(4);
+        &:first-child {
+            @include shift(2); 
+        }
+    }        
+        
+        
+
+    }   
+}
+
 section#toastmaster {
     color:#fff;
     background-color:$dark-brown;
@@ -102,10 +125,7 @@ section#program .container .row div {
 }
 
 
-#map {
-    height:70vh;
-    width:100%;
-}
+
 .row { @include row(); }
 
 .container { @include outer-container(); }

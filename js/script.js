@@ -111,11 +111,18 @@ function initMap() {
 jQuery(document).ready(function($){
     $("#btn_map_church").click(function(event){
        map.setCenter(markers[0].getPosition());
+       map.setZoom(14);
        event.preventDefault();
     });
     
     $("#btn_map_castle").click(function(event){
-       map.setCenter(markers[1].getPosition());
-       event.preventDefault();
+        map.setCenter(markers[1].getPosition());
+        map.setZoom(14);
+        event.preventDefault();
     });    
+    
+    $("#btn_map_all").click(function(event){
+        initMap();
+        event.preventDefault();
+    });     
 })
