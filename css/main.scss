@@ -28,11 +28,11 @@ html, body {
 header {
     background-color: $dark-brown;
     background-image: url('../images/header.svg'), 
-    linear-gradient(to right, rgba($dark-brown, 0.8), rgba($dark-brown, 0.8)),
-    url('../images/jacob_line_2.jpg');
+    linear-gradient(to right, rgba($dark-brown, 0.8), rgba($dark-brown, 0.8));
+    /*url('../images/jacob_line_2.jpg');*/
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: 80%, 100%, cover;
+    background-size: 80%, 100%;
     width: 100%;
     height:100%;
     
@@ -71,7 +71,6 @@ section#heart {
 }
 
 section#transport {
-    padding-bottom: 0;
     
     #map {
         height:80vh;
