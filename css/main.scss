@@ -78,18 +78,18 @@ section#transport {
     } 
     
     .address {
-        
-        
-    @include media($medium-screen) {
-        @include span-columns(4);
-        &:first-child {
-            @include shift(2); 
-        }
-    }        
-        
-        
-
+        @include media($medium-screen) {
+            @include span-columns(4);
+            &:first-child {
+                @include shift(2); 
+            }
+        }        
     }   
+    
+}
+
+section#dresscode {
+    background-color:$light-yellow;
 }
 
 section#toastmaster {
