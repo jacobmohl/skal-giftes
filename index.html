@@ -44,6 +44,12 @@
                     <span class="nav-label">Program</span>
                 </a>
             </li>  
+            <li>
+                <a href="#wishlist" data-number="5">
+                    <span class="nav-dot"></span>
+                    <span class="nav-label">Ønskeliste</span>
+                </a>
+            </li>             
             <!--                     
             <li>
                 <a href="#toastmaster" data-number="4">
@@ -62,7 +68,7 @@
     </nav>
     <a class="nav-trigger">Åben navigation<span></span></a>
     
-    <header></header>
+    <header><a class="button button_inverse button_small" href="mailto:vikommer@jacobogline.dk?subject=Vi kommer">VI KOMMER</a> - <a class="button button_inverse button_small" href="mailto:vikommer@jacobogline.dk?subject=Vi kommer">VI KOMMER IKKE</a></header>
     
     <section id="accommodation" class="nav-section accommodation">
         <div class="container">
@@ -98,7 +104,7 @@
         <br>
         <div id="map"></div>
         <br>
-        <a id="btn_map_all" class="button button_small" href="#">Se alt</a>  
+        <a id="btn_map_all" class="button button_small" href="#">Se begge lokationer</a>  
     </section>
     
     <section id="dresscode" class="nav-section">
@@ -124,17 +130,20 @@
         </div>
     </section>   
     
+     <section id="photo"></section>
+     
     <!--
     <section id="toastmaster" class="nav-section">
         <h1>Toastmaster</h1>
         <br><br><br>
     </section>
-    
+    -->
     <section id="wishlist" class="nav-section">
         <h1>Ønskeliste</h1>
+        <p>Kommer snarest...</p>
         <br><br><br>
     </section>
-    -->
+    
       <footer></footer>
       <script async defer src="//maps.googleapis.com/maps/api/js?key={{ site.mapsApiKey }}&callback=initMap"></script>
 </body>

@@ -36,6 +36,11 @@ header {
     width: 100%;
     height:100%;
     
+    a {
+        margin-top:80vh;
+    }
+   
+    
     @include media($medium-screen) {
         background-size: 60%, 100%, cover;
     }
@@ -89,12 +94,19 @@ section#transport {
 }
 
 section#dresscode {
-    background-color:$light-yellow;
+    background-color:$light-red;
 }
 
 section#toastmaster {
     color:#fff;
     background-color:$dark-brown;
+}
+
+section#photo {
+    background:url('../images/jacob_line_1.jpg');
+    background-size: cover;
+    background-position: center;
+    height:80vh;
 }
 section#splitter1 {
     height: 80%;
@@ -167,6 +179,16 @@ section#program .container .row div {
 }
 .button.button_small {
     font-size:0.8em;
+}
+
+.button.button_inverse {
+    border-color:#fff;
+    color:#fff;
+    
+    &:hover {
+        background-color: #fff;
+        color: $dark-brown;
+    }    
 }
 
 @import "nav";
