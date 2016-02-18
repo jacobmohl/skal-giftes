@@ -14,7 +14,7 @@ html, body {
     margin: 0px; 
     padding: 0px;
     
-    font-size:12px;
+    font-size:14px;
     
     @include media($medium-screen) {
         font-size: 16px;
@@ -78,7 +78,7 @@ section#heart {
 section#transport {
     
     #map {
-        height:80vh;
+        height:70vh;
         width:100%;
     } 
     
