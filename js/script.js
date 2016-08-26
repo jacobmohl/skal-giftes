@@ -108,7 +108,34 @@ function initMap() {
   
 };
 
+//RUNTIME
 jQuery(document).ready(function($){
+
+    /*
+    //Program a custom submit function for the form
+    //$("form#guestbook_form").submit(function(event){
+    $("form#guestbook_form").on("submit", function(event){
+        
+        //disable the default form submission
+        //event.preventDefault(); 
+
+        // Change the text of the button
+        $("#submit").text("Sender besked...");
+        
+        // Animate the section
+        $("#guestbook").animate({
+            marginTop:"-530"
+        }, 1000, function() {
+            console.log("Animation done");
+            //event.target.submit;
+            //$("form#guestbook_form").unbind();
+            //$("form#guestbook_form").submit();
+        });
+        
+    }); 
+    */   
+
+
     $("#btn_map_church").click(function(event){
        map.setCenter(markers[0].getPosition());
        map.setZoom(14);

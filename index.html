@@ -15,34 +15,36 @@
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
     <script src="//code.jquery.com/jquery-2.2.0.min.js"></script>
     <script src="js/script.js"></script>
-    
-  <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    {% if jekyll.environment == "production" %}
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-74508125-1', 'auto');
-  ga('send', 'pageview');
+    ga('create', 'UA-74508125-1', 'auto');
+    ga('send', 'pageview');
 
-  </script>    
+    </script> 
+    {% endif %}   
 </head>
 
 <body>
     <nav>
         <ul>
             <li>
-                <a href="#accommodation" data-number="1">
+                <a href="#program" data-number="1">
                     <span class="nav-dot"></span>
-                    <span class="nav-label">Overnatning</span>
+                    <span class="nav-label">Program</span>
                 </a>
-            </li>
+            </li> 
+
             <li>
                 <a href="#transport" data-number="2">
                     <span class="nav-dot"></span>
                     <span class="nav-label">Kørsel</span>
                 </a>
-            </li>  
+            </li> 
             <li>
                 <a href="#dresscode" data-number="3">
                     <span class="nav-dot"></span>
@@ -50,11 +52,12 @@
                 </a>
             </li>             
             <li>
-                <a href="#program" data-number="4">
+                <a href="#guestbook" data-number="4">
                     <span class="nav-dot"></span>
-                    <span class="nav-label">Program</span>
+                    <span class="nav-label">Gæstebog</span>
                 </a>
             </li>  
+
             <li>
                 <a href="#toastmaster" data-number="5">
                     <span class="nav-dot"></span>
@@ -66,33 +69,33 @@
                     <span class="nav-dot"></span>
                     <span class="nav-label">Ønskeliste</span>
                 </a>
-            </li>             
-                               
-                      
+            </li> 
+            <li>
+                <a href="#accommodation" data-number="7">
+                    <span class="nav-dot"></span>
+                    <span class="nav-label">Overnatning</span>
+                </a>
+            </li>    
         </ul>
     </nav>
     <a class="nav-trigger">Åben navigation<span></span></a>
     
-    <header><a class="button button_inverse button_small" href="mailto:vikommer@jacobogline.dk?subject=Vi kommer">VI KOMMER</a> - <a class="button button_inverse button_small" href="mailto:vikommerikke@jacobogline.dk?subject=Vi kommer ikke">VI KOMMER IKKE</a></header>
-    
-    <section id="accommodation" class="nav-section accommodation">
+    <header>
+        <!--<a class="button button_inverse button_small" href="mailto:vikommer@jacobogline.dk?subject=Vi kommer">VI KOMMER</a> - <a class="button button_inverse button_small" href="mailto:vikommerikke@jacobogline.dk?subject=Vi kommer ikke">VI KOMMER IKKE</a>-->
+    </header>
+
+    <section id="program" class="nav-section">
+        <h1>Program</h1>
         <div class="container">
             <div class="row">
-                <div class="span6of12"><img src="images/hindsgavl.png"/></div>
+                <div><img src="images/program.svg"></div>
             </div>
-            <div class="row">
-                <div class="span8of12">
-                    <h1>Overnatning</h1>
-                    <p>Har du også lyst til at overnatte på Hindsgavl Slot, så kontakt slottes reception via telefon <span style="white-space: nowrap;">64 41 88 00</span> eller e-mail <a href="mailto:hindsgavl@hindsgavl.dk">hindsgavl@hindsgavl.dk</a>. <br/><br/>Husk at nævn at I er Jacob & Lines bryllupsgæster.</p>
-                    <p>Pris pr. dobbeltværelse kr. 950,00 incl. morgenbuffet.<br/>Pris pr. enkeltværelse kr. 750,00 incl. morgenbuffet.</p>                    
-                    <br>
-                    <a href="tel:64 41 88 00" class="button">Ring op</a>                    
-                </div>
-            </div>
+            <p><b>Husk badetøj!</b><br> Der er mulighed for at tage en morgendukkert på Hindsgavl. Så for de morgenfriske er der mulighed for at få "renset hovedet"!</p>
         </div>
     </section>
+
     <section id="heart"></section>
-    
+
     <section id="transport" class="nav-section">
         <h1>Kørselsvejledning</h1>
 
@@ -111,7 +114,7 @@
         <br>
         <a id="btn_map_all" class="button button_small" href="#">Se begge lokationer</a>  
     </section>
-    
+
     <section id="dresscode" class="nav-section">
         <div class="containter">
             <div class="row">
@@ -124,20 +127,31 @@
                 </div>
             </div> 
         </div>        
-    </section>
-    
-    <section id="program" class="nav-section">
-        <h1>Program</h1>
+    </section>    
+
+    <section id="guestbook" class="guestbook nav-section">
         <div class="container">
+            <h1>Skriv i vores gæstebog</h1>
             <div class="row">
-                <div><img src="images/program.svg"/></div>
+                <div class="span6of12mobile">
+                    <form id="guestbook_form" action="https://getform.org/u/9300a114-51d5-4408-8656-fcf44c7a83da" enctype="multipart/form-data" method="POST" accept-charset="UTF-8">
+                        <label for="name">Navn</label>
+                        <input type="text" name="name" required>
+                        <label for="email">E-mail</label>
+                        <input type="email" name="email"> 
+                        <label for="message">Besked</label>
+                        <textarea name="message"></textarea>
+                        <label for="file">Evt. billede eller video</label>
+                        <input type="file" name="file">
+                        <br><br>
+                        <button id="submit">Send besked</button>         
+                    </form>
+                    <p><i>Beskeden bliver sendt til Jacob og Line direkte og vises ikke på siden.</i></p>
+                </div>
             </div>
-        </div>
-    </section>   
-    
-     <section id="photo"></section>
-     
-    
+        <div>    
+    </section>
+
     <section id="toastmaster" class="nav-section">
         <h1>Toastmaster</h1>
         <div class="container">
@@ -153,8 +167,8 @@
                 </div>
             </div>
         </div>
-    </section>
-    
+    </section>      
+
     <section id="wishlist" class="nav-section">
         <h1>Ønskeliste</h1>
         <p>
@@ -185,8 +199,28 @@
         <p>Der bliver løbende tilføjet ønsker...</p>
         <br><br><br>
     </section>
+
+    <section id="photo"></section>
+
+    <section id="accommodation" class="nav-section accommodation">
+        <div class="container">
+            <div class="row">
+                <div class="span6of12"><img src="images/hindsgavl.png"/></div>
+            </div>
+            <div class="row">
+                <div class="span8of12">
+                    <h1>Overnatning</h1>
+                    <p>Har du også lyst til at overnatte på Hindsgavl Slot, så kontakt slottes reception via telefon <span style="white-space: nowrap;">64 41 88 00</span> eller e-mail <a href="mailto:hindsgavl@hindsgavl.dk">hindsgavl@hindsgavl.dk</a>. <br/><br/>Husk at nævn at I er Jacob & Lines bryllupsgæster.</p>
+                    <p>Pris pr. dobbeltværelse kr. 950,00 incl. morgenbuffet.<br/>Pris pr. enkeltværelse kr. 750,00 incl. morgenbuffet.</p>                    
+                    <br>
+                    <a href="tel:64 41 88 00" class="button">Ring op</a>                    
+                </div>
+            </div>
+        </div>
+    </section>
     
-      <footer></footer>
-      <script async defer src="//maps.googleapis.com/maps/api/js?key={{ site.mapsApiKey }}&callback=initMap"></script>
+    <footer></footer>
+
+    <script async defer src="//maps.googleapis.com/maps/api/js?key={{ site.mapsApiKey }}&callback=initMap"></script>
 </body>
 </html>
