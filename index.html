@@ -30,107 +30,71 @@
 </head>
 
 <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/da_DK/sdk.js#xfbml=1&version=v2.7&appId=1358676670809496";
+    fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
     <nav>
         <ul>
             <li>
-                <a href="#program" data-number="1">
-                    <span class="nav-dot"></span>
-                    <span class="nav-label">Program</span>
-                </a>
-            </li> 
-
-            <li>
-                <a href="#transport" data-number="2">
-                    <span class="nav-dot"></span>
-                    <span class="nav-label">Kørsel</span>
-                </a>
-            </li> 
-            <li>
-                <a href="#dresscode" data-number="3">
-                    <span class="nav-dot"></span>
-                    <span class="nav-label">Dresscode</span>
-                </a>
-            </li>             
-            <li>
-                <a href="#guestbook" data-number="4">
+                <a href="#guestbook" data-number="1">
                     <span class="nav-dot"></span>
                     <span class="nav-label">Gæstebog</span>
                 </a>
             </li>  
 
             <li>
-                <a href="#toastmaster" data-number="5">
+                <a href="#program" data-number="2">
                     <span class="nav-dot"></span>
-                    <span class="nav-label">Toastmaster</span>
+                    <span class="nav-label">Program</span>
                 </a>
-            </li>             
+            </li> 
+
             <li>
-                <a href="#wishlist" data-number="6">
+                <a href="#transport" data-number="3">
+                    <span class="nav-dot"></span>
+                    <span class="nav-label">Kørsel</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="#wishlist" data-number="4">
                     <span class="nav-dot"></span>
                     <span class="nav-label">Ønskeliste</span>
                 </a>
-            </li> 
-            <li>
-                <a href="#accommodation" data-number="7">
-                    <span class="nav-dot"></span>
-                    <span class="nav-label">Overnatning</span>
-                </a>
-            </li>    
+            </li>  
         </ul>
     </nav>
     <a class="nav-trigger">Åben navigation<span></span></a>
     
     <header>
-        <!--<a class="button button_inverse button_small" href="mailto:vikommer@jacobogline.dk?subject=Vi kommer">VI KOMMER</a> - <a class="button button_inverse button_small" href="mailto:vikommerikke@jacobogline.dk?subject=Vi kommer ikke">VI KOMMER IKKE</a>-->
+        <a class="button button_inverse button_small" href="#guestbook">SKRIV I GÆSTEBOGEN</a>
     </header>
 
-    <section id="program" class="nav-section">
-        <h1>Program</h1>
+    <section>
         <div class="container">
             <div class="row">
-                <div><img src="images/program.svg"></div>
-            </div>
-            <p><b>Husk badetøj!</b><br> Der er mulighed for at tage en morgendukkert på Hindsgavl. Så for de morgenfriske er der mulighed for at få "renset hovedet"!</p>
-        </div>
-    </section>
-
-    <section id="heart"></section>
-
-    <section id="transport" class="nav-section">
-        <h1>Kørselsvejledning</h1>
-
-        <div class="container">
-            <div class="row">
-                <div class="address">
-                    <p><a id="btn_map_castle" class="button button_small" href="#">HINDSGAVL SLOT</a> <br/>Hindsgavl Allé 7 <br/>5500 Middelfart<br/><a href="https://maps.google.com?daddr=Thomas+Kingos+Kirke">Se kørselsvejledning</a></p>
-                </div>
-                <div class="address">
-                    <p><a id="btn_map_church" class="button button_small" href="#">THOMAS KINGOS KIRKE</a><br/>Bülowsvej 9-11<br/>5230 Odense M<br/><a href="https://maps.google.com?daddr=Hindsgavl+Slot">Se kørselsvejledning</a></p>
+                <div class="span6of12mobile">
+                    <div class="fb-post" data-href="https://www.facebook.com/621539231/posts/10154121474564232/" data-width="auto" data-show-text="true">
+                        <blockquote cite="https://www.facebook.com/621539231/posts/10154121474564232/" class="fb-xfbml-parse-ignore">Opslået af <a href="https://www.facebook.com/jacobmohl">Jacob Møhl</a> på&nbsp;<a href="https://www.facebook.com/621539231/posts/10154121474564232/">28. august 2016</a></blockquote>
+                    </div>
                 </div>
             </div>
         </div>
-        <br>
-        <div id="map"></div>
-        <br>
-        <a id="btn_map_all" class="button button_small" href="#">Se begge lokationer</a>  
     </section>
 
-    <section id="dresscode" class="nav-section">
-        <div class="containter">
-            <div class="row">
-                <div class="span8of12">
-                    <h1>Dresscode</h1>
-                    <h4>Herrerne</h4>
-                    <p>Jakkesæt eller lign. festtøj.</p>
-                    <h4>Damerne</h4>
-                    <p>Kort eller lang aftenkjole, pæne bukser.</p>
-                </div>
-            </div> 
-        </div>        
-    </section>    
+    <section id="heart"></section>     
 
     <section id="guestbook" class="guestbook nav-section">
         <div class="container">
+            <div class="row">
+                <div class="span6of12"><img src="images/hindsgavl.png"/></div>
+            </div>            
             <h1>Skriv i vores gæstebog</h1>
             <div class="row">
                 <div class="span6of12mobile">
@@ -151,6 +115,52 @@
             </div>
         <div>    
     </section>
+    
+    <section id="photo"></section>
+
+    <section id="program" class="nav-section">
+        <h1>Program</h1>
+        <div class="container">
+            <div class="row">
+                <div><img src="images/program.svg"></div>
+            </div>
+            <p><b>Husk badetøj!</b><br> Der er mulighed for at tage en morgendukkert på Hindsgavl. Så for de morgenfriske er der mulighed for at få "renset hovedet"!</p>
+        </div>
+    </section>
+
+    <section id="transport" class="nav-section">
+        <h1>Kørselsvejledning</h1>
+
+        <div class="container">
+            <div class="row">
+                <div class="address">
+                    <p><a id="btn_map_castle" class="button button_small" href="#">HINDSGAVL SLOT</a> <br/>Hindsgavl Allé 7 <br/>5500 Middelfart<br/><a href="https://maps.google.com?daddr=Thomas+Kingos+Kirke">Se kørselsvejledning</a></p>
+                </div>
+                <div class="address">
+                    <p><a id="btn_map_church" class="button button_small" href="#">THOMAS KINGOS KIRKE</a><br/>Bülowsvej 9-11<br/>5230 Odense M<br/><a href="https://maps.google.com?daddr=Hindsgavl+Slot">Se kørselsvejledning</a></p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div id="map"></div>
+        <br>
+        <a id="btn_map_all" class="button button_small" href="#">Se begge lokationer</a>  
+    </section>
+
+<!--
+    <section id="dresscode" class="nav-section">
+        <div class="containter">
+            <div class="row">
+                <div class="span8of12">
+                    <h1>Dresscode</h1>
+                    <h4>Herrerne</h4>
+                    <p>Jakkesæt eller lign. festtøj.</p>
+                    <h4>Damerne</h4>
+                    <p>Kort eller lang aftenkjole, pæne bukser.</p>
+                </div>
+            </div> 
+        </div>        
+    </section>    
 
     <section id="toastmaster" class="nav-section">
         <h1>Toastmaster</h1>
@@ -167,7 +177,8 @@
                 </div>
             </div>
         </div>
-    </section>      
+    </section>   
+    -->   
 
     <section id="wishlist" class="nav-section">
         <h1>Ønskeliste</h1>
@@ -200,9 +211,7 @@
         <br><br><br>
     </section>
 
-    <section id="photo"></section>
-
-    <section id="accommodation" class="nav-section accommodation">
+    <!--<section id="accommodation" class="nav-section accommodation">
         <div class="container">
             <div class="row">
                 <div class="span6of12"><img src="images/hindsgavl.png"/></div>
@@ -217,7 +226,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>-->
     
     <footer></footer>
 
