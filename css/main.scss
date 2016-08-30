@@ -107,7 +107,7 @@ section#dresscode {
     background-color:$light-red;
 }
 
-section#toastmaster {
+section#toastmaster, section#menu {
     color:#fff;
     background-color:$dark-brown;
 }
@@ -118,6 +118,9 @@ section#photo {
     background-position: center;
     height:80vh;
 }
+
+
+
 section#splitter1 {
     height: 80%;
     background-color: $dark-brown;
