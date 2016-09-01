@@ -111,31 +111,6 @@ function initMap() {
 //RUNTIME
 jQuery(document).ready(function($){
 
-    /*
-    //Program a custom submit function for the form
-    //$("form#guestbook_form").submit(function(event){
-    $("form#guestbook_form").on("submit", function(event){
-        
-        //disable the default form submission
-        //event.preventDefault(); 
-
-        // Change the text of the button
-        $("#submit").text("Sender besked...");
-        
-        // Animate the section
-        $("#guestbook").animate({
-            marginTop:"-530"
-        }, 1000, function() {
-            console.log("Animation done");
-            //event.target.submit;
-            //$("form#guestbook_form").unbind();
-            //$("form#guestbook_form").submit();
-        });
-        
-    }); 
-    */   
-
-
     $("#btn_map_church").click(function(event){
        map.setCenter(markers[0].getPosition());
        map.setZoom(14);
@@ -152,4 +127,131 @@ jQuery(document).ready(function($){
         initMap();
         event.preventDefault();
     });     
+})
+
+
+//GALLERY
+function setOverlay() {
+    var activeImage = $("#pictures img.active");
+    var prevImage   = activeImage.prev();
+    var nextImage   = activeImage.next();
+
+    var overlay     = $("#overlay");
+
+    // Set the images
+    $("img", overlay).attr("src", activeImage.attr("src"));
+
+    // Toogle prev button
+    if(prevImage.length == 0) {
+        $("#overlay #prev").hide();
+    } else {
+        $("#overlay #prev").show();
+    }
+
+    //Toggle next button
+    if(nextImage.length == 0) {
+        $("#overlay #next").hide();
+    } else {
+        $("#overlay #next").show();
+    }
+
+    // Show overlay
+    overlay.css("display", "flex");  
+}
+
+function nextImage() {
+    var currentImage = $("#pictures img.active");
+    var nextImage = currentImage.next();
+
+    if(nextImage.length > 0) {
+
+        currentImage.removeClass("active");
+        nextImage.addClass("active");
+
+        setOverlay();
+    }
+}
+
+function prevImage() {
+    var currentImage = $("#pictures img.active");
+    var prevImage = currentImage.prev();
+
+    if(prevImage.length > 0) {
+
+        currentImage.removeClass("active");
+        prevImage.addClass("active");
+
+        setOverlay();    
+    }
+}
+
+function closeOverlay() {
+    $("#overlay").css("display", "none");
+    $("#pictures img").removeClass("active");
+}
+
+function initGallery() {
+    console.log("Init gallery");
+    $("#pictures img").click(function(event){
+        // Reset all images to not active
+        $("#pictures img").removeClass("active");
+        
+        // Set the current images to active
+        $(this).addClass("active");
+
+        setOverlay();       
+    });
+
+    $("#overlay #close").click(function(event){
+        closeOverlay();
+    });
+
+    $("#overlay #next").click(function(){
+        nextImage();
+    });
+
+    $("#overlay #prev").click(function(){
+        prevImage();
+    });
+
+
+    $( "html" ).keydown(function( event ) {
+        if ( event.which == 39 ) { //prev arrow
+            nextImage();
+        } else if ( event.which == 37 ) { //next arrow
+            prevImage();
+        } else if ( event.which == 27 ) { //esc
+            closeOverlay();
+        }
+    });
+}
+
+function fetchImages() {
+    //Load JSON with images
+    // Populate #pictures with images
+    var baseUrl = "http://res.cloudinary.com/jacobmohl/";
+    var url = baseUrl + "image/list/gallery.json";
+    
+
+    $.get(url, function( data ) {
+
+        data.resources.reverse().forEach(function(element) {
+            var imageSrc = baseUrl + "image/" + element.type + "/c_fill,g_auto/w_auto,q_auto,f_auto/" + element.public_id + "." + element.format; 
+
+            jQuery('<img/>', {
+                src : imageSrc
+            }).appendTo('#pictures');
+
+            //http://res.cloudinary.com/jacobmohl/image/upload/c_fill,g_auto/w_auto,q_auto,f_auto/JacobOgLine/Galleri/20160827_134446.jpg
+        }, this);
+
+        initGallery();
+        
+    });
+
+    
+
+}
+jQuery(document).ready(function($){
+    fetchImages();
 })
