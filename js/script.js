@@ -252,7 +252,7 @@ data.resources.sort(function(a, b) {
 });        
 
         data.resources.forEach(function(element) {
-            var imageSrc = baseUrl + "image/" + element.type + "/w_400,h_400,c_thumb/" + element.public_id + "." + element.format; 
+            var imageSrc = baseUrl + "image/" + element.type + "/w_300,h_300,c_thumb/" + element.public_id + "." + element.format; 
 
             jQuery('<img/>', {
                 src : imageSrc,
