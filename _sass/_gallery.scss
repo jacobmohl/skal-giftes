@@ -7,15 +7,15 @@ section#gallery {
         align-items: center;
         justify-content: space-between;
         
-        /*
-        @include media($medium-screen) {
-            column-count: 4;
-        }     
-*/
+ 
         img { 
-            width:20%;
+            width:50%;
             padding:5px;
             transition: .8s opacity;
+
+            @include media($medium-screen) {
+                width:20%;
+            }                
         }
 
         &:hover img {
