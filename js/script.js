@@ -1,3 +1,6 @@
+/* RUNTIME */
+
+
 jQuery(document).ready(function($){
 	var contentSections = $('.nav-section'),
 		navigationItems = $('nav a'),
@@ -132,14 +135,23 @@ jQuery(document).ready(function($){
 
 //GALLERY
 function setOverlay() {
+    var overlay     = $("#overlay");
+    $("img", overlay).attr("src", "");
+
     var activeImage = $("#pictures img.active");
     var prevImage   = activeImage.prev();
     var nextImage   = activeImage.next();
 
-    var overlay     = $("#overlay");
+    
+    var id = activeImage.attr("data-link");
+    
+    
+
+    var baseUrl = "http://res.cloudinary.com/jacobmohl/";
+    var imageSrc = baseUrl + "image/upload/w_1200/" + id + ".jpg";
 
     // Set the images
-    $("img", overlay).attr("src", activeImage.attr("src"));
+    $("img", overlay).attr("src", imageSrc);
 
     // Toogle prev button
     if(prevImage.length == 0) {
@@ -230,16 +242,21 @@ function fetchImages() {
     //Load JSON with images
     // Populate #pictures with images
     var baseUrl = "http://res.cloudinary.com/jacobmohl/";
-    var url = baseUrl + "image/list/gallery.json";
+    var url = baseUrl + "image/list/online.json";
     
 
     $.get(url, function( data ) {
 
-        data.resources.reverse().forEach(function(element) {
-            var imageSrc = baseUrl + "image/" + element.type + "/c_fill,g_auto/w_auto,q_auto,f_auto/" + element.public_id + "." + element.format; 
+data.resources.sort(function(a, b) {
+    return parseFloat(a.public_id) - parseFloat(b.public_id);
+});        
+
+        data.resources.forEach(function(element) {
+            var imageSrc = baseUrl + "image/" + element.type + "/w_400,h_400,c_thumb/" + element.public_id + "." + element.format; 
 
             jQuery('<img/>', {
-                src : imageSrc
+                src : imageSrc,
+                "data-link": element.public_id
             }).appendTo('#pictures');
 
             //http://res.cloudinary.com/jacobmohl/image/upload/c_fill,g_auto/w_auto,q_auto,f_auto/JacobOgLine/Galleri/20160827_134446.jpg

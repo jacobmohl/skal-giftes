@@ -42,14 +42,21 @@
     <nav>
         <ul>
             <li>
-                <a href="#guestbook" data-number="1">
+                <a href="#gallery" data-number="1">
+                    <span class="nav-dot"></span>
+                    <span class="nav-label">Galleri</span>
+                </a>
+            </li>  
+
+            <li>
+                <a href="#guestbook" data-number="2">
                     <span class="nav-dot"></span>
                     <span class="nav-label">Gæstebog</span>
                 </a>
             </li>  
 
             <li>
-                <a href="#menu" data-number="2">
+                <a href="#menu" data-number="3">
                     <span class="nav-dot"></span>
                     <span class="nav-label">Menu</span>
                 </a>
@@ -60,20 +67,26 @@
     <a class="nav-trigger">Åben navigation<span></span></a>
     
     <header>
-        <a class="button button_inverse button_small" href="#guestbook">SKRIV I GÆSTEBOGEN</a>
+        <div class="video-wrapper">
+            <iframe src="https://player.vimeo.com/video/183356934?background=1" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            <div class="video-overlay">
+                <a class="button button_inverse button_small" href="#guestbook">SKRIV I GÆSTEBOGEN</a>
+            </div>
+        </div>         
     </header>
 
-    <section>
+    <section id="gallery" class="gallery nav-section">
         <div class="container">
-            <div class="row">
-                <div class="span6of12mobile">
-                    <div class="fb-post" data-href="https://www.facebook.com/621539231/posts/10154121474564232/" data-width="auto" data-show-text="true">
-                        <blockquote cite="https://www.facebook.com/621539231/posts/10154121474564232/" class="fb-xfbml-parse-ignore">Opslået af <a href="https://www.facebook.com/jacobmohl">Jacob Møhl</a> på&nbsp;<a href="https://www.facebook.com/621539231/posts/10154121474564232/">28. august 2016</a></blockquote>
-                    </div>
-                </div>
+            <h1>Galleri</h1>
+            <div id="pictures"></div>
+            <div id="overlay">
+                <div id="prev">&#10094;</div>
+                <div id="next">&#10095;</div>
+                <div id="close"></div>
+                <img>
             </div>
         </div>
-    </section>
+    </section>    
 
     <section id="heart"></section>     
 
@@ -129,26 +142,12 @@
     </section>
 
 
-    <section id="gallery">
-        <div class="container">
-            <h1>Galleri</h1>
-            <div id="pictures">
-                <!--
-                <img src="http://res.cloudinary.com/jacobmohl/image/upload/c_fill,g_auto/w_auto,q_auto,f_auto/JacobOgLine/Galleri/20160827_134446.jpg">
-                <img src="http://res.cloudinary.com/jacobmohl/image/upload/c_fill,g_auto/w_auto,q_auto,f_auto/JacobOgLine/Galleri/IMG_4617.jpg">
-                <img src="http://res.cloudinary.com/jacobmohl/image/upload/c_fill,g_auto/w_auto,q_auto,f_auto/JacobOgLine/Galleri/IMG_4626.jpg">-->
-            </div>
-            <div id="overlay">
-                <div id="close"></div>
-                <div id="prev">&#10094;</div>
-                <div id="next">&#10095;</div>
-                <img>
-            </div>
-        </div>
-    </section>
+
+
+<!--
     <section id="photo"></section>
 
-    <!--
+    
     <section id="program" class="nav-section">
         <h1>Program</h1>
         <div class="container">

@@ -1,15 +1,20 @@
 section#gallery {
 
     #pictures {
-        column-count: 2;
-        column-gap: 0;
-
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        
+        /*
         @include media($medium-screen) {
             column-count: 4;
         }     
-
+*/
         img { 
-            padding: 5px;
+            width:20%;
+            padding:5px;
             transition: .8s opacity;
         }
 
@@ -81,27 +86,26 @@ section#gallery {
         #prev, #next {
             position: absolute;
             display:block;
-            width:20px;
-            height:40px;
-            margin-top:20px;
-            top:50%;
+            width:40%;
+            height:100%;
             cursor: pointer;
-            text-align: center;
             color:#fff;
             font-size:2em;
             opacity: 0.3;
             transition: all 300ms ease-in-out;
-            cursor: pointer;
+            line-height: 100vh;
 
             &:hover {
                 opacity: 1;
             }
         }
         #next {
+            text-align: right;
             right:32px;
         }
 
         #prev {
+            text-align: left;
             left:32px;
         }
     }
